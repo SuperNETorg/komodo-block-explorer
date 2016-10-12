@@ -35,5 +35,8 @@ sudo apt-get install npm
 # install nvm
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
 echo "logout of this shell, log back in and run: bash block-explorer-part2.sh"
 
