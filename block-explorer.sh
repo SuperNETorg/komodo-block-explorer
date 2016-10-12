@@ -3,7 +3,7 @@ sudo apt-get -y update
 
 # Install zcash dependencies:
 
-sudo apt-get install \
+sudo apt-get -y install \
       build-essential pkg-config libc6-dev m4 g++-multilib \
       autoconf libtool ncurses-dev unzip git python \
       zlib1g-dev wget bsdmainutils automake
@@ -22,13 +22,9 @@ git checkout v1.0.0-beta2-bitcore-3
 # build patched zcash
 ./zcutil/build.sh -j$(nproc)
 
-# create config file for zcashd
-mkdir ~/.zcash
-
-
 # install node and dependencies
 cd ..
-sudo apt-get install npm
+sudo apt-get -y install npm
 
 # install nvm
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
@@ -37,7 +33,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | 
 nvm install v4
 
 # install zeromq
-sudo apt-get install libzmq3-dev
+sudo apt-get -y install libzmq3-dev
 
 # install bitcore
 npm install -g bitcore
