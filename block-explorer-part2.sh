@@ -1,9 +1,5 @@
 #!/bin/bash
 
-
-echo "logout of this shell, log back in and run: bash block-explorer-part2.sh"
-
-
 # switch node setup with nvm
 nvm install v4
 
