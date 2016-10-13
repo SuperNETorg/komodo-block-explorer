@@ -36,7 +36,7 @@ echo
 
 # install node and dependencies
 cd ..
-sudo apt-get install npm
+sudo apt-get -y install npm
 
 # install nvm
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash

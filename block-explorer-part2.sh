@@ -16,13 +16,13 @@ echo "installing bitcore dependencies"
 echo
 
 # install zeromq
-sudo apt-get install libzmq3-dev
+sudo apt-get -y install libzmq3-dev
 
 echo "installing bitcore"
 echo
 
 # install bitcore
-sudo npm install -g bitcore
+npm install -g bitcore
 
 npm install str4d/bitcore-node-zcash
 
