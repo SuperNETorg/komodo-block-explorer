@@ -1,5 +1,7 @@
 #!/bin/bash
 
+RUNDIR=`pwd`
+
 echo "switching to correct node version"
 echo
 
@@ -60,7 +62,7 @@ cat << EOF > bitcore-node.json
     "bitcoind": {
       "spawn": {
         "datadir": "./data",
-        "exec": "/home/ubuntu/zcash/src/zcashd"
+        "exec": "$RUNDIR/zcash/src/zcashd"
       }
     }
   }
