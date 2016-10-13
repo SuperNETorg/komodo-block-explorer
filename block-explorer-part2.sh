@@ -54,7 +54,7 @@ cat << EOF > bitcore-node.json
     "bitcoind",
     "insight-api-zcash",
     "insight-ui-zcash",
-    "lweb"
+    "web"
   ],
   "servicesConfig": {
     "bitcoind": {
@@ -87,12 +87,6 @@ uacomment=bitcore
 
 EOF
 
-echo "---------------"
-echo "installing bitcore backend"
-echo
-
-# install bitcore
-npm install -g bitcore
 
 echo "---------------"
 # start block explorer
