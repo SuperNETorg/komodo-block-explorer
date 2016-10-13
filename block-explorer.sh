@@ -8,7 +8,7 @@ wget https://raw.githubusercontent.com/radix42/zcash-block-explorer/master/block
 echo "---------------"
 echo "updating packages"
 echo
-sudo apt-get update
+sudo apt-get -y update
 
 echo "---------------"
 # Install zcash dependencies:
