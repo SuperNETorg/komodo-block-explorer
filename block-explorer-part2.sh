@@ -12,20 +12,19 @@ export NVM_DIR="$HOME/.nvm"
 # switch node setup with nvm
 nvm install v4
 
+echo "---------------"
 echo "installing bitcore dependencies"
 echo
 
 # install zeromq
 sudo apt-get -y install libzmq3-dev
 
-echo "installing bitcore"
-echo
-
-# install bitcore
-npm install -g bitcore
-
+echo "---------------"
+echo "installing zcash patched bitcore"
+echo 
 npm install str4d/bitcore-node-zcash
 
+echo "---------------"
 echo "setting up bitcore"
 echo
 
@@ -34,6 +33,7 @@ echo
 
 cd beta2-explorer
 
+echo "---------------"
 echo "creating config files"
 echo
 
@@ -77,11 +77,20 @@ rpcpassword=local321
 uacomment=bitcore
 EOF
 
+echo "---------------"
 echo "installing insight UI"
 echo
 
 ../node_modules/bitcore-node-zcash/bin/bitcore-node install str4d/insight-api-zcash str4d/insight-ui-zcash
 
+echo "---------------"
+echo "installing bitcore backend"
+echo
 
+# install bitcore
+npm install -g bitcore
+
+echo "---------------"
 # start block explorer
-echo "To start the block explorer, from you homedir issue the command: ./beta2-explorer/node_modules/bitcore-node-zcash/bin/bitcore-node start"
+echo "To start the block explorer, from you homedir issue the command:"
+echo " nvm use v4; ./beta2-explorer/node_modules/bitcore-node-zcash/bin/bitcore-node start"
