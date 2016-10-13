@@ -1,9 +1,16 @@
 #!/bin/bash
+echo "downloading part2"
+echo
 
 wget https://raw.githubusercontent.com/radix42/zcash-block-explorer/master/block-explorer-part2.sh
+
+echo "updating packages"
+echo
 sudo apt-get update
 
 # Install zcash dependencies:
+echo "installing zcash"
+echo
 
 sudo apt-get install \
       build-essential pkg-config libc6-dev m4 g++-multilib \
@@ -24,9 +31,8 @@ git checkout v1.0.0-beta2-bitcore-3
 # build patched zcash
 ./zcutil/build.sh -j$(nproc)
 
-# create config file for zcashd
-mkdir ~/.zcash
-
+echo "installing node"
+echo
 
 # install node and dependencies
 cd ..

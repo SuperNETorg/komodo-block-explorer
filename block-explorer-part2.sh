@@ -1,20 +1,41 @@
 #!/bin/bash
 
+echo "switching to correct node version"
+echo
+
+# nvm setup
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+
 # switch node setup with nvm
 nvm install v4
 
+echo "installing bitcore dependencies"
+echo
+
 # install zeromq
 sudo apt-get install libzmq3-dev
+
+echo "installing bitcore"
+echo
 
 # install bitcore
 sudo npm install -g bitcore
 
 npm install str4d/bitcore-node-zcash
 
+echo "setting up bitcore"
+echo
+
 # setup bitcore
 ./node_modules/bitcore-node-zcash/bin/bitcore-node create beta2-explorer
 
 cd beta2-explorer
+
+echo "creating config files"
+echo
 
 # point zcash at testnet
 cat << EOF > bitcore-node.json
@@ -55,6 +76,9 @@ rpcuser=bitcoin
 rpcpassword=local321
 uacomment=bitcore
 EOF
+
+echo "installing insight UI"
+echo
 
 ../node_modules/bitcore-node-zcash/bin/bitcore-node install str4d/insight-api-zcash str4d/insight-ui-zcash
 
