@@ -3,6 +3,8 @@ Script to install and setup a zcash block explorer on Ubuntu 16.04 for the zcash
 
 On a fresh Ubuntu 16.04 server, from a non-root user's home directory, run the following commands:
 
+sudo apt-get update
+
 wget https://raw.githubusercontent.com/radix42/zcash-block-explorer/master/block-explorer.sh
 
 bash block-explorer.sh
