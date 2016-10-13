@@ -33,6 +33,14 @@ echo
 
 cd beta2-explorer
 
+
+echo "---------------"
+echo "installing insight UI"
+echo
+
+../node_modules/bitcore-node-zcash/bin/bitcore-node install str4d/insight-api-zcash str4d/insight-ui-zcash
+
+
 echo "---------------"
 echo "creating config files"
 echo
@@ -57,6 +65,7 @@ cat << EOF > bitcore-node.json
     }
   }
 }
+
 EOF
 
 # create zcash.conf
@@ -75,13 +84,8 @@ rpcallowip=127.0.0.1
 rpcuser=bitcoin
 rpcpassword=local321
 uacomment=bitcore
+
 EOF
-
-echo "---------------"
-echo "installing insight UI"
-echo
-
-../node_modules/bitcore-node-zcash/bin/bitcore-node install str4d/insight-api-zcash str4d/insight-ui-zcash
 
 echo "---------------"
 echo "installing bitcore backend"
