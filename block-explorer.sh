@@ -21,8 +21,8 @@ git clone https://github.com/str4d/zcash.git
 
 cd zcash
 
-# switch to beta2 version of source code; this will change in the future
-git checkout v1.0.0-beta2-bitcore-3
+# switch to sprout version of source code; this will change in the future
+git checkout v1.0.0-bitcore-3
 
 # download proving parameters
 ./zcutil/fetch-params.sh
