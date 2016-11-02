@@ -70,16 +70,15 @@ EOF
 
 # create zcash.conf
 cat << EOF > data/zcash.conf
-testnet=1
-addnode=betatestnet.z.cash
+addnode=mainnet.z.cash
 server=1
 whitelist=127.0.0.1
 txindex=1
 addressindex=1
 timestampindex=1
 spentindex=1
-zmqpubrawtx=tcp://127.0.0.1:28332
-zmqpubhashblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:8332
+zmqpubhashblock=tcp://127.0.0.1:8332
 rpcallowip=127.0.0.1
 rpcuser=bitcoin
 rpcpassword=local321
