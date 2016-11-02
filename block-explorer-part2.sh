@@ -89,5 +89,5 @@ EOF
 
 echo "---------------"
 # start block explorer
-echo "To start the block explorer, from within the beta2-explorer directory issue the command:"
+echo "To start the block explorer, from within the zcash-explorer directory issue the command:"
 echo " nvm use v4; ./node_modules/bitcore-node-zcash/bin/bitcore-node start"
