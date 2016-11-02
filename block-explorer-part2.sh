@@ -31,9 +31,9 @@ echo "setting up bitcore"
 echo
 
 # setup bitcore
-./node_modules/bitcore-node-zcash/bin/bitcore-node create beta2-explorer
+./node_modules/bitcore-node-zcash/bin/bitcore-node create zcash-explorer
 
-cd beta2-explorer
+cd zcash-explorer
 
 
 echo "---------------"
@@ -47,10 +47,10 @@ echo "---------------"
 echo "creating config files"
 echo
 
-# point zcash at testnet
+# point zcash at mainnet
 cat << EOF > bitcore-node.json
 {
-  "network": "testnet",
+  "network": "mainnet",
   "port": 3001,
   "services": [
     "bitcoind",
