@@ -52,7 +52,7 @@ echo "installing nvm"
 echo
 
 # install nvm
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
