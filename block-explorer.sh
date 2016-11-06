@@ -31,13 +31,13 @@ git checkout v1.0.0-bitcore-3
 ./zcutil/build.sh -j$(nproc)
 
 # install lintian
-apt-get -y install lintian
+sudo apt-get -y install lintian
 
 # package zcash
 ./zcutil/build-debian-package.sh
 
 # install zcash
-dpkg -i zcash-1.0.0-sprout-amd64.deb
+sudo dpkg -i zcash-1.0.0-sprout-amd64.deb
 
 echo "---------------"
 echo "installing node and npm"
