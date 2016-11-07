@@ -83,6 +83,7 @@ rpcallowip=127.0.0.1
 rpcuser=bitcoin
 rpcpassword=local321
 uacomment=bitcore
+showmetrics=0
 
 EOF
 
