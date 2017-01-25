@@ -20,47 +20,47 @@ echo
 sudo apt-get -y install libzmq3-dev
 
 echo "---------------"
-echo "installing zcash patched bitcore"
+echo "installing komodo patched bitcore"
 echo 
-npm install str4d/bitcore-node-zcash
+npm install supernetorg/bitcore-node-komodo
 
 echo "---------------"
 echo "setting up bitcore"
 echo
 
 # setup bitcore
-./node_modules/bitcore-node-zcash/bin/bitcore-node create zcash-explorer
+./node_modules/bitcore-node-komodo/bin/bitcore-node create komodo-explorer
 
-cd zcash-explorer
+cd komodo-explorer
 
 
 echo "---------------"
 echo "installing insight UI"
 echo
 
-../node_modules/bitcore-node-zcash/bin/bitcore-node install str4d/insight-api-zcash str4d/insight-ui-zcash
+../node_modules/bitcore-node-komodo/bin/bitcore-node install supernetorg/insight-api-komodo supernetorg/insight-ui-komodo
 
 
 echo "---------------"
 echo "creating config files"
 echo
 
-# point zcash at mainnet
+# point komodo at mainnet
 cat << EOF > bitcore-node.json
 {
   "network": "mainnet",
   "port": 3001,
   "services": [
     "bitcoind",
-    "insight-api-zcash",
-    "insight-ui-zcash",
+    "insight-api-komodo",
+    "insight-ui-komodo",
     "web"
   ],
   "servicesConfig": {
     "bitcoind": {
       "spawn": {
-        "datadir": "./data",
-        "exec": "zcashd"
+        "datadir": "$HOME/.komodo",
+        "exec": "komodod"
       }
     }
   }
@@ -68,9 +68,8 @@ cat << EOF > bitcore-node.json
 
 EOF
 
-# create zcash.conf
-cat << EOF > data/zcash.conf
-addnode=mainnet.z.cash
+# create komodo.conf
+cat << EOF > $HOME/.komodo/komodo.conf
 server=1
 whitelist=127.0.0.1
 txindex=1
@@ -80,6 +79,7 @@ spentindex=1
 zmqpubrawtx=tcp://127.0.0.1:8332
 zmqpubhashblock=tcp://127.0.0.1:8332
 rpcallowip=127.0.0.1
+rpcport=8232
 rpcuser=bitcoin
 rpcpassword=local321
 uacomment=bitcore
@@ -90,5 +90,5 @@ EOF
 
 echo "---------------"
 # start block explorer
-echo "To start the block explorer, from within the zcash-explorer directory issue the command:"
-echo " nvm use v4; ./node_modules/bitcore-node-zcash/bin/bitcore-node start"
+echo "To start the block explorer, from within the komodo-explorer directory issue the command:"
+echo " nvm use v4; ./node_modules/bitcore-node-komodo/bin/bitcore-node start"

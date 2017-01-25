@@ -3,12 +3,12 @@
 echo "downloading part2"
 echo
 
-wget https://raw.githubusercontent.com/radix42/zcash-block-explorer/master/block-explorer-part2.sh
+wget https://raw.githubusercontent.com/supernetorg/komodo-block-explorer/master/block-explorer-part2.sh
 
 echo "---------------"
-# Install zcash dependencies:
+# Install komodo dependencies:
 
-echo "installing zcash"
+echo "installing komodo"
 echo
 
 sudo apt-get -y install \
@@ -17,27 +17,22 @@ sudo apt-get -y install \
       zlib1g-dev wget bsdmainutils automake
 
 # download zcash source from fork with block explorer patches
-git clone https://github.com/str4d/zcash.git
+git clone https://github.com/supernetorg/komodo-bitcore.git
 
-cd zcash
+cd komodo
 
 # switch to sprout version of source code; this will change in the future
-git checkout v1.0.4-bitcore-3
+git checkout komodo-insight
 
 # download proving parameters
 ./zcutil/fetch-params.sh
 
-# build patched zcash
+# build patched komodo
 ./zcutil/build.sh -j$(nproc)
 
-# install lintian
-sudo apt-get -y install lintian
-
-# package zcash
-./zcutil/build-debian-package.sh
-
-# install zcash
-sudo dpkg -i zcash-1.0.0-sprout-amd64.deb
+# install komodo
+sudo cp src/komodod /usr/local/bin/
+sudo cp src/komodo-cli /usr/local/bin/
 
 echo "---------------"
 echo "installing node and npm"
