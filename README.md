@@ -17,9 +17,13 @@ normally controls stopping and starting komodod, otherwise when you first launch
 and kill komodod.
 The server runs in the foreground, and for production use you will want to run it in a tmux or screen session, or under a process manager such as supervisor.
 
+To install, the server needs its ssh key added to the bitecore-lib-komodo repository.
+
 The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface.
 
 All actions performed by the script are thouroughly commented. 
+
+-------
 
 Blockchain explorer patches for zcashd by @str4d. This script and docs created under a commission by noashh and supernet
 
