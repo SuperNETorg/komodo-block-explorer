@@ -69,6 +69,7 @@ cat << EOF > bitcore-node.json
 EOF
 
 # create komodo.conf
+cd ~
 mkdir .komodo
 touch .komodo/komodo.conf
 
