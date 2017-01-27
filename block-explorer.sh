@@ -17,7 +17,7 @@ sudo apt-get -y install \
       zlib1g-dev wget bsdmainutils automake
 
 # download zcash source from fork with block explorer patches
-git clone https://github.com/supernetorg/komodo-bitcore.git
+git clone https://github.com/supernetorg/komodo-bitcore.git komodo
 
 cd komodo
 
