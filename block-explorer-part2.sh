@@ -69,6 +69,9 @@ cat << EOF > bitcore-node.json
 EOF
 
 # create komodo.conf
+mkdir .komodo
+touch .komodo/komodo.conf
+
 cat << EOF > $HOME/.komodo/komodo.conf
 server=1
 whitelist=127.0.0.1
