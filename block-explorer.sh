@@ -14,7 +14,7 @@ echo
 sudo apt-get -y install \
       build-essential pkg-config libc6-dev m4 g++-multilib \
       autoconf libtool ncurses-dev unzip git python \
-      zlib1g-dev wget bsdmainutils automake
+      zlib1g-dev wget bsdmainutils automake curl libcurl4-gnutls-dev 
 
 # download zcash source from fork with block explorer patches
 git clone https://github.com/supernetorg/komodo-bitcore.git komodo
