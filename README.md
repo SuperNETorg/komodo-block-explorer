@@ -19,6 +19,13 @@ The server runs in the foreground, and for production use you will want to run i
 
 To install, the server needs its ssh key added to the bitecore-lib-komodo repository.
 
+Once setup is complete, replace
+komodo-explorer/node_modules/insight-api-komodo/lib/currency.js with currency.js-no-poloniex (rename)
+and
+komodo-explorer/node_modules/insight-api-komodo/node_modules/bitcore-lib-komodo/lib/address.js with address.js-fixed (rename)
+
+
+
 The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface.
 
 All actions performed by the script are thouroughly commented. 
