@@ -26,7 +26,7 @@ komodo-explorer/node_modules/insight-api-komodo/node_modules/bitcore-lib-komodo/
 
 - To change the URL insight uses, modify ~/komodo-explorer/node_modules/insight-ui-komodo/bitcore-node-komodo/index.js to use  this.routePrefix = ''; instead of this.routePrefix = 'insight';
 
-- To change the port insight listens on web web requests to 80, do as root
+- To change the port insight listens on web web requests to 80, do
 ```
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
