@@ -17,16 +17,23 @@ normally controls stopping and starting komodod, otherwise when you first launch
 and kill komodod.
 The server runs in the foreground, and for production use you will want to run it in a tmux or screen session, or under a process manager such as supervisor.
 
-To install, the server needs its ssh key added to the bitecore-lib-komodo repository.
+- To install, the server needs its ssh key added to the bitecore-lib-komodo repository.
 
-Once setup is complete, replace
+- Once setup is complete, replace
 komodo-explorer/node_modules/insight-api-komodo/lib/currency.js with currency.js-no-poloniex (rename)
 and
 komodo-explorer/node_modules/insight-api-komodo/node_modules/bitcore-lib-komodo/lib/address.js with address.js-fixed (rename)
 
+- To change the URL insight uses, modify ~/komodo-explorer/node_modules/insight-ui-komodo/bitcore-node-komodo/index.js to use  this.routePrefix = ''; instead of this.routePrefix = 'insight';
 
+- To change the port insight listens on web web requests to 80, do as root
+```
+sudo apt-get install libcap2-bin
+sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+```
+and modify the port in ~/komodo-explorer/bitcore-node.json
 
-The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface.
+The block explorer will be available on http://localhost (if you changed port + routePrefix) and any additional IP addresses your server has bound to its network interface.
 
 All actions performed by the script are thouroughly commented. 
 
